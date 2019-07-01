@@ -1,0 +1,58 @@
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="card card-body">
+            <div class="row text-right">
+                <div class="col">
+                    <button class="btn btn-danger" routerLink="/hospitales">
+                                <i class="fa fa-arrow-left"></i>
+                                Regresar
+                            </button>
+                </div>
+            </div>
+            <h3 class="box-title m-b-0">Crear Nueva Unidad Médica</h3>
+            <br>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarHospital(f)">
+                        <div class="form-group">
+                            <label>Unidad Médica</label>
+                            <select [(ngModel)]="hospital.tipo" name="tipo" class="form-control" required>
+                                      <option value="">Seleccione una unidad médica</option>
+                                      <option *ngFor="let tipo of tipos" [value]="tipo._id">
+                                          {{ tipo.nombre }}
+                                      </option>
+                                    </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre de la Unidad Médica</label>
+                            <input [(ngModel)]="hospital.nombre" required name="nombre" type="text" class="form-control" placeholder="Ingresa el Nombre de la Unidad Médica...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Dirección</label>
+                            <input [(ngModel)]="hospital.direccion" required name="direccion" type="text" class="form-control" placeholder="Ingrese la Dirección">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input [(ngModel)]="hospital.telefono" required name="telefono" type="tel" placeholder="" data-mask="(55) 999-9999" placeholder="(55) 1234-5678" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                          <i class="fa fa-save"></i>
+                          Guardar
+                        </button>
+
+                        <button [routerLink]="'/hospitales'" type="button" class="btn btn-inverse waves-effect waves-light">
+                            <i class="fa fa-close"></i>
+                            Cancelar
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

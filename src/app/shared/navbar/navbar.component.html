@@ -1,0 +1,68 @@
+<section id="wrapper" class="login-register login-sidebar" style="background-color: white">
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <!-- Logo icon --><b>
+                                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                    <!-- Dark Logo icon -->
+                                    <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                    <!-- Light Logo icon -->
+                                </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text --><span>
+                                 <!-- dark Logo text -->
+                                 <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                 <!-- Light Logo text -->    
+                                 </span> </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <!-- active -->
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['home']">Inicio </a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['heroes']">Médicos</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['about']">Hospitales</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['about']">Farmacias</a>
+                    </li>
+                </ul>
+
+                <div class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar hospital, médicos..." (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto aria-label="Search">
+                    <button (click)="buscarHeroe(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button>
+
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                <button class="btn btn-secondary" type="button">Ingresar</button>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+                                <ul class="dropdown-user">
+                                    <li><a routerLink="/login" class="pointer"><i class="fa fa-user-circle"></i> Iniciar Sesión</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a routerLink="/register" class="pointer"><i class="fa fa-user-circle"></i> Registrarse</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+</section>
